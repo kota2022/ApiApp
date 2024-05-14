@@ -14,6 +14,12 @@
 		DDC599F92BF0B10100ADFD68 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDC599F82BF0B10100ADFD68 /* Base */; };
 		DDC599FB2BF0B10300ADFD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC599FA2BF0B10300ADFD68 /* Assets.xcassets */; };
 		DDC599FE2BF0B10300ADFD68 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDC599FD2BF0B10300ADFD68 /* Base */; };
+		DDC59A062BF25DEC00ADFD68 /* ApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC59A052BF25DEC00ADFD68 /* ApiViewController.swift */; };
+		DDC59A082BF25F4400ADFD68 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC59A072BF25F4400ADFD68 /* FavoriteViewController.swift */; };
+		DDC59A0A2BF321B600ADFD68 /* ApiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDC59A092BF321B600ADFD68 /* ApiKey.plist */; };
+		DDC59A0E2BF3284600ADFD68 /* ShopCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC59A0D2BF3284600ADFD68 /* ShopCellTableViewCell.swift */; };
+		DDC59A102BF3306700ADFD68 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC59A0F2BF3306700ADFD68 /* ApiResponse.swift */; };
+		DDC59A122BF3538800ADFD68 /* FavoriteShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC59A112BF3538800ADFD68 /* FavoriteShop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		DDC599FA2BF0B10300ADFD68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDC599FD2BF0B10300ADFD68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDC599FF2BF0B10300ADFD68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDC59A052BF25DEC00ADFD68 /* ApiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiViewController.swift; sourceTree = "<group>"; };
+		DDC59A072BF25F4400ADFD68 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		DDC59A092BF321B600ADFD68 /* ApiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKey.plist; sourceTree = "<group>"; };
+		DDC59A0D2BF3284600ADFD68 /* ShopCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCellTableViewCell.swift; sourceTree = "<group>"; };
+		DDC59A0F2BF3306700ADFD68 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		DDC59A112BF3538800ADFD68 /* FavoriteShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteShop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,11 +94,17 @@
 			children = (
 				DDC599F12BF0B10100ADFD68 /* AppDelegate.swift */,
 				DDC599F32BF0B10100ADFD68 /* SceneDelegate.swift */,
+				DDC59A0D2BF3284600ADFD68 /* ShopCellTableViewCell.swift */,
+				DDC59A0F2BF3306700ADFD68 /* ApiResponse.swift */,
 				DDC599F52BF0B10100ADFD68 /* ViewController.swift */,
+				DDC59A052BF25DEC00ADFD68 /* ApiViewController.swift */,
+				DDC59A072BF25F4400ADFD68 /* FavoriteViewController.swift */,
+				DDC59A112BF3538800ADFD68 /* FavoriteShop.swift */,
 				DDC599F72BF0B10100ADFD68 /* Main.storyboard */,
 				DDC599FA2BF0B10300ADFD68 /* Assets.xcassets */,
 				DDC599FC2BF0B10300ADFD68 /* LaunchScreen.storyboard */,
 				DDC599FF2BF0B10300ADFD68 /* Info.plist */,
+				DDC59A092BF321B600ADFD68 /* ApiKey.plist */,
 			);
 			path = ApiApp;
 			sourceTree = "<group>";
@@ -152,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC599FB2BF0B10300ADFD68 /* Assets.xcassets in Resources */,
+				DDC59A0A2BF321B600ADFD68 /* ApiKey.plist in Resources */,
 				DDC599FE2BF0B10300ADFD68 /* Base in Resources */,
 				DDC599F92BF0B10100ADFD68 /* Base in Resources */,
 			);
@@ -209,6 +228,11 @@
 				DDC599F62BF0B10100ADFD68 /* ViewController.swift in Sources */,
 				DDC599F22BF0B10100ADFD68 /* AppDelegate.swift in Sources */,
 				DDC599F42BF0B10100ADFD68 /* SceneDelegate.swift in Sources */,
+				DDC59A102BF3306700ADFD68 /* ApiResponse.swift in Sources */,
+				DDC59A062BF25DEC00ADFD68 /* ApiViewController.swift in Sources */,
+				DDC59A082BF25F4400ADFD68 /* FavoriteViewController.swift in Sources */,
+				DDC59A0E2BF3284600ADFD68 /* ShopCellTableViewCell.swift in Sources */,
+				DDC59A122BF3538800ADFD68 /* FavoriteShop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
