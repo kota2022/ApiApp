@@ -81,19 +81,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="y66-R0-Cf3">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ffi-NU-jr9" id="qcO-qM-aCL"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bhm-1h-4Og"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aiH-km-tcD" firstAttribute="centerY" secondItem="h1D-bO-IXg" secondAttribute="centerY" id="ALo-hK-3wV"/>
                             <constraint firstItem="bhm-1h-4Og" firstAttribute="bottom" secondItem="0q7-pv-EZX" secondAttribute="bottom" id="APV-aA-Mx4"/>
+                            <constraint firstItem="y66-R0-Cf3" firstAttribute="top" secondItem="bhm-1h-4Og" secondAttribute="top" id="KHm-Xg-0lX"/>
+                            <constraint firstItem="y66-R0-Cf3" firstAttribute="leading" secondItem="bhm-1h-4Og" secondAttribute="leading" id="Mim-Kt-VoO"/>
+                            <constraint firstItem="y66-R0-Cf3" firstAttribute="trailing" secondItem="bhm-1h-4Og" secondAttribute="trailing" id="QT1-wb-kpH"/>
                             <constraint firstItem="bhm-1h-4Og" firstAttribute="trailing" secondItem="0q7-pv-EZX" secondAttribute="trailing" id="nrU-O7-2kT"/>
                             <constraint firstItem="0q7-pv-EZX" firstAttribute="top" secondItem="bhm-1h-4Og" secondAttribute="top" id="pTf-QJ-ZE1"/>
                             <constraint firstItem="0q7-pv-EZX" firstAttribute="leading" secondItem="bhm-1h-4Og" secondAttribute="leading" id="unv-XO-0UO"/>
                             <constraint firstItem="aiH-km-tcD" firstAttribute="centerX" secondItem="h1D-bO-IXg" secondAttribute="centerX" id="uza-YZ-WTw"/>
+                            <constraint firstItem="aiH-km-tcD" firstAttribute="top" secondItem="y66-R0-Cf3" secondAttribute="bottom" constant="312.67000000000002" id="yai-WS-rzV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="y66-R0-Cf3" id="V3E-4Z-QFZ"/>
                         <outlet property="statusLabel" destination="aiH-km-tcD" id="PcE-FF-Y9P"/>
                         <outlet property="tableView" destination="0q7-pv-EZX" id="1Yc-pU-Kgz"/>
                     </connections>

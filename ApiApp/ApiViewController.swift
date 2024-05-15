@@ -9,22 +9,29 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import RealmSwift
+import SafariServices
 
-class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     
    
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     let realm = try! Realm()
     var shopArray: [ApiResponse.Result.Shop] = []
     var apiKey: String = ""
+    var isLoading = false
+    var isLastLoading = false
+    var keyword: String = "ランチ"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -42,17 +49,43 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         // Do any additional setup after loading the view.
     }
     
-    func updateShopArray(){
+    func updateShopArray(appendLoad: Bool = false){
         
-        let parameters: [String: Any] = [
-            "key": apiKey,
-            "start": 1,
-            "count": 20,
-            "keyword": "ランチ",
-            "format": "json"
-        ]
         
+            
+            if isLoading {
+                return
+            }
+            
+            if appendLoad && isLastLoading {
+                return
+            }
+            
+            
+            let startIndex: Int
+            
+            if appendLoad {
+                startIndex = shopArray.count + 1
+            } else {
+                startIndex = 1
+            }
+            
+            isLoading = true
+            
+            let parameters: [String: Any] = [
+                "key" : apiKey,
+                "start" : startIndex,
+                "count" : 20,
+                "keyword" : keyword,
+                "format" : "json"
+                
+            ]
+        
+        
+        print("APIリクエスト　開始位置：\(parameters["start"]!)読み込み店舗数\(parameters["count"]!)")
         AF.request("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/", method: .get, parameters: parameters).responseDecodable(of: ApiResponse.self) { response in
+            
+            self.isLoading = false
             
             if self.tableView.refreshControl!.isRefreshing {
                 self.tableView.refreshControl!.endRefreshing()
@@ -61,14 +94,31 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             //レスポンス受信処理
             switch response.result{
                 
+                
+                
             case .success(let apiResponse):
-                print("受信データ\(apiResponse)")
-                self.shopArray = apiResponse.results.shop
+                
+                print("受信店舗数：\(apiResponse.results.shop.count)")
+                
+                if appendLoad {
+                    
+                    self.shopArray += apiResponse.results.shop
+                    
+                }else{
+                    self.shopArray = apiResponse.results.shop
+                    self.isLastLoading = false
+                }
+                
+                if apiResponse.results.shop.count == 0{
+                    self.isLastLoading = true
+                }
+                
                 self.statusLabel.text = ""
                 
             case .failure(let error):
                 print(error)
                 self.shopArray = []
+                self.isLastLoading = true
                 self.statusLabel.text = "データの取得が失敗しました"
                 
                 
@@ -93,8 +143,34 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let starImage = UIImage(systemName: starImageName)?.withRenderingMode(.alwaysOriginal)
         cell.favoriteButton.setImage(starImage, for: .normal)
         
+        if shopArray.count - indexPath.row < 10 {
+            updateShopArray(appendLoad: true)
+        }
+        
+        
         return cell
+        
+        
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let shop = shopArray[indexPath.row]
+        let urlString: String
+        if shop.coupon_urls.sp == ""{
+            urlString = shop.coupon_urls.pc
+        } else {
+            urlString = shop.coupon_urls.sp
+        }
+        
+        let url = URL(string: urlString)!
+        let safariViewController = SFSafariViewController(url : url)
+        safariViewController.modalPresentationStyle = .pageSheet
+        present(safariViewController, animated: true)
+        
+    }
+    
     
     @objc func refresh(){
         updateShopArray()
@@ -120,7 +196,7 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 favoriteShop.id = shop.id
                 favoriteShop.name = shop.name
                 favoriteShop.logoImageURL = shop.logo_image
-                if shop.coupon_urls.sp == ""{
+                if shop.coupon_urls.sp == "" {
                     favoriteShop.couponURL = shop.coupon_urls.pc
                     
                 }else{
@@ -129,6 +205,23 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 realm.add(favoriteShop)
             }
         }
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        
+        if let word = searchBar.text {
+            keyword = word
+            refresh()
+            
+        }
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         tableView.reloadData()
     }
     /*
