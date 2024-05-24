@@ -16,6 +16,7 @@ struct ApiResponse: Decodable{
             var id: String
             var name: String
             var logo_image: String
+            var address: String
             var coupon_urls: CouponUrls
             
             struct CouponUrls: Decodable {

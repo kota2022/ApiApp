@@ -83,6 +83,7 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         
         print("APIリクエスト　開始位置：\(parameters["start"]!)読み込み店舗数\(parameters["count"]!)")
+        
         AF.request("https://webservice.recruit.co.jp/hotpepper/gourmet/v1/", method: .get, parameters: parameters).responseDecodable(of: ApiResponse.self) { response in
             
             self.isLoading = false
@@ -133,11 +134,13 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ShopCell
         let shop = shopArray[indexPath.row]
         let url = URL(string: shop.logo_image)!
         cell.logoImageView.af.setImage(withURL: url)
         cell.shopNameLabel.text = shop.name
+        cell.addressLabel.text = shop.address
         
         let starImageName = shop.isFavorite ? "star.fill" : "star"
         let starImage = UIImage(systemName: starImageName)?.withRenderingMode(.alwaysOriginal)
@@ -155,6 +158,7 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: false)
         let shop = shopArray[indexPath.row]
         let urlString: String
@@ -196,6 +200,7 @@ class ApiViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 favoriteShop.id = shop.id
                 favoriteShop.name = shop.name
                 favoriteShop.logoImageURL = shop.logo_image
+                favoriteShop.address = shop.address
                 if shop.coupon_urls.sp == "" {
                     favoriteShop.couponURL = shop.coupon_urls.pc
                     

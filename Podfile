@@ -10,5 +10,6 @@ target 'ApiApp' do
   pod 'Alamofire', '5.8.1'
   pod 'AlamofireImage', '4.3.0'
   pod 'RealmSwift', '10.45.2'
+  pod 'SVProgressHUD','2.3.1'
 
 end

@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8ADEF2934C1FB7A80A41606E /* Pods_ApiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E9932528C0FDA3BCC7F91E /* Pods_ApiApp.framework */; };
+		DD8878212BF9FCBF00C5D5A1 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DD8878202BF9FCBF00C5D5A1 /* Base.lproj */; };
+		DD8878232BF9FE4300C5D5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8878222BF9FE4300C5D5A1 /* Main.storyboard */; };
+		DDA28A182BF9FB4C0087B275 /* ApiApp in Resources */ = {isa = PBXBuildFile; fileRef = DDA28A172BF9FB4C0087B275 /* ApiApp */; };
 		DDC599F22BF0B10100ADFD68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC599F12BF0B10100ADFD68 /* AppDelegate.swift */; };
 		DDC599F42BF0B10100ADFD68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC599F32BF0B10100ADFD68 /* SceneDelegate.swift */; };
 		DDC599F62BF0B10100ADFD68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC599F52BF0B10100ADFD68 /* ViewController.swift */; };
-		DDC599F92BF0B10100ADFD68 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDC599F82BF0B10100ADFD68 /* Base */; };
 		DDC599FB2BF0B10300ADFD68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDC599FA2BF0B10300ADFD68 /* Assets.xcassets */; };
 		DDC599FE2BF0B10300ADFD68 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DDC599FD2BF0B10300ADFD68 /* Base */; };
 		DDC59A062BF25DEC00ADFD68 /* ApiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC59A052BF25DEC00ADFD68 /* ApiViewController.swift */; };
@@ -26,11 +28,13 @@
 		12E9932528C0FDA3BCC7F91E /* Pods_ApiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BED47EE208C1FB6812F211F /* Pods-ApiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiApp.debug.xcconfig"; path = "Target Support Files/Pods-ApiApp/Pods-ApiApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4A257036EC0B7C97F8D632F6 /* Pods-ApiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiApp.release.xcconfig"; path = "Target Support Files/Pods-ApiApp/Pods-ApiApp.release.xcconfig"; sourceTree = "<group>"; };
-		DDC599EE2BF0B10100ADFD68 /* ApiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD8878202BF9FCBF00C5D5A1 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		DD8878222BF9FE4300C5D5A1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DDA28A172BF9FB4C0087B275 /* ApiApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ApiApp; sourceTree = SOURCE_ROOT; };
+		DDC599EE2BF0B10100ADFD68 /* ApiApp 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ApiApp 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC599F12BF0B10100ADFD68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDC599F32BF0B10100ADFD68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DDC599F52BF0B10100ADFD68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DDC599F82BF0B10100ADFD68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDC599FA2BF0B10300ADFD68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDC599FD2BF0B10300ADFD68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDC599FF2BF0B10300ADFD68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 		DDC599EF2BF0B10100ADFD68 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDC599EE2BF0B10100ADFD68 /* ApiApp.app */,
+				DDC599EE2BF0B10100ADFD68 /* ApiApp 2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +96,7 @@
 		DDC599F02BF0B10100ADFD68 /* ApiApp */ = {
 			isa = PBXGroup;
 			children = (
+				DDA28A172BF9FB4C0087B275 /* ApiApp */,
 				DDC599F12BF0B10100ADFD68 /* AppDelegate.swift */,
 				DDC599F32BF0B10100ADFD68 /* SceneDelegate.swift */,
 				DDC59A0D2BF3284600ADFD68 /* ShopCellTableViewCell.swift */,
@@ -99,10 +104,11 @@
 				DDC599F52BF0B10100ADFD68 /* ViewController.swift */,
 				DDC59A052BF25DEC00ADFD68 /* ApiViewController.swift */,
 				DDC59A072BF25F4400ADFD68 /* FavoriteViewController.swift */,
+				DD8878222BF9FE4300C5D5A1 /* Main.storyboard */,
 				DDC59A112BF3538800ADFD68 /* FavoriteShop.swift */,
-				DDC599F72BF0B10100ADFD68 /* Main.storyboard */,
 				DDC599FA2BF0B10300ADFD68 /* Assets.xcassets */,
 				DDC599FC2BF0B10300ADFD68 /* LaunchScreen.storyboard */,
+				DD8878202BF9FCBF00C5D5A1 /* Base.lproj */,
 				DDC599FF2BF0B10300ADFD68 /* Info.plist */,
 				DDC59A092BF321B600ADFD68 /* ApiKey.plist */,
 			);
@@ -112,9 +118,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDC599ED2BF0B10100ADFD68 /* ApiApp */ = {
+		DDC599ED2BF0B10100ADFD68 /* ApiApp 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDC59A022BF0B10300ADFD68 /* Build configuration list for PBXNativeTarget "ApiApp" */;
+			buildConfigurationList = DDC59A022BF0B10300ADFD68 /* Build configuration list for PBXNativeTarget "ApiApp 2" */;
 			buildPhases = (
 				A258B2172093F284EEC86E37 /* [CP] Check Pods Manifest.lock */,
 				DDC599EA2BF0B10100ADFD68 /* Sources */,
@@ -126,9 +132,9 @@
 			);
 			dependencies = (
 			);
-			name = ApiApp;
+			name = "ApiApp 2";
 			productName = ApiApp;
-			productReference = DDC599EE2BF0B10100ADFD68 /* ApiApp.app */;
+			productReference = DDC599EE2BF0B10100ADFD68 /* ApiApp 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -146,7 +152,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DDC599E92BF0B10100ADFD68 /* Build configuration list for PBXProject "ApiApp" */;
+			buildConfigurationList = DDC599E92BF0B10100ADFD68 /* Build configuration list for PBXProject "ApiApp 2" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,7 +165,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDC599ED2BF0B10100ADFD68 /* ApiApp */,
+				DDC599ED2BF0B10100ADFD68 /* ApiApp 2 */,
 			);
 		};
 /* End PBXProject section */
@@ -170,9 +176,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC599FB2BF0B10300ADFD68 /* Assets.xcassets in Resources */,
+				DDA28A182BF9FB4C0087B275 /* ApiApp in Resources */,
+				DD8878212BF9FCBF00C5D5A1 /* Base.lproj in Resources */,
+				DD8878232BF9FE4300C5D5A1 /* Main.storyboard in Resources */,
 				DDC59A0A2BF321B600ADFD68 /* ApiKey.plist in Resources */,
 				DDC599FE2BF0B10300ADFD68 /* Base in Resources */,
-				DDC599F92BF0B10100ADFD68 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,14 +247,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DDC599F72BF0B10100ADFD68 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDC599F82BF0B10100ADFD68 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDC599FC2BF0B10300ADFD68 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -450,7 +450,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDC599E92BF0B10100ADFD68 /* Build configuration list for PBXProject "ApiApp" */ = {
+		DDC599E92BF0B10100ADFD68 /* Build configuration list for PBXProject "ApiApp 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDC59A002BF0B10300ADFD68 /* Debug */,
@@ -459,7 +459,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDC59A022BF0B10300ADFD68 /* Build configuration list for PBXNativeTarget "ApiApp" */ = {
+		DDC59A022BF0B10300ADFD68 /* Build configuration list for PBXNativeTarget "ApiApp 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDC59A032BF0B10300ADFD68 /* Debug */,

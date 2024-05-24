@@ -12,6 +12,7 @@ class FavoriteShop: Object {
     @Persisted(primaryKey: true) var id = ""
     @Persisted var name = ""
     @Persisted var logoImageURL = ""
+    @Persisted var address = ""
     @Persisted var couponURL = ""
     
 }
